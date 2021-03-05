@@ -3,9 +3,13 @@
 
 import 'egg';
 import ExportDevServer from '../../../app/middleware/devServer';
+import ExportProxy from '../../../app/middleware/proxy';
+import ExportWebpack from '../../../app/middleware/webpack';
 
 declare module 'egg' {
   interface IMiddleware {
     devServer: typeof ExportDevServer;
+    proxy: typeof ExportProxy;
+    webpack: typeof ExportWebpack;
   }
 }

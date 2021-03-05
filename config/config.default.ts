@@ -21,18 +21,19 @@ export default (appInfo: EggAppInfo) => {
     mapping: {
       '.html': 'nunjucks',
     },
-    root: [
-      path.join(appInfo.baseDir, 'app/view'),
-      path.join(appInfo.baseDir, 'path/to/another'),
-    ].join(','),
+    root: path.join(appInfo.baseDir, 'dist'),
   };
 
   config.static = {
     prefix: '/assets/',
     dir: [
       path.join(appInfo.baseDir, 'app/public'),
-      path.join(appInfo.baseDir, 'dist/assets'),
+      path.join(appInfo.baseDir, 'dist'),
     ],
+  };
+
+  config.security = {
+    csrf: false,
   };
 
   // the return config will combines to EggAppConfig

@@ -8,7 +8,7 @@ class HomeController extends Controller {
   public async index() {
     const { ctx } = this;
 
-    await ctx.render('index.html');
+    await ctx.webpack.render('index.html');
   }
 
   @HttpGet('/api/hello')
